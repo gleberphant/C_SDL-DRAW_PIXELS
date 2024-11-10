@@ -1,5 +1,5 @@
 # Nome do executável
-EXECUTAVEL = app_main
+EXECUTAVEL = main
 
 # Arquivos com fonte
 FONTES = main.c

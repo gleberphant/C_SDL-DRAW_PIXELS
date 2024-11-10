@@ -37,11 +37,7 @@ Aplicação para desenhar na tela feita em C utilizando a biblioteca  `SDL` em 2
 #### ▶️Comandos
 
 ```
-click com o botão esquerdo do mouse para criar novas gosta de chuva
-```
-
-```
-Aperte os direcionais cima e baixo para aumentar ou diminuir a gravidade
+click com o botão esquerdo do mouse para desenhar
 ```
 
 <br>
@@ -59,7 +55,7 @@ Aperte os direcionais cima e baixo para aumentar ou diminuir a gravidade
 ## 🚀 Clone do repositário
 
 ```
-git clone https://github.com/gleberphant/appsdl1.git
+git clone https://github.com/gleberphant/SDL_PAINT_LIKE.git
 ```
 
 <br>
