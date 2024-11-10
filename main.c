@@ -78,7 +78,7 @@ BOOLEAN updateStatus(ACTIONS actionParam){
 
             for(int i = -2; i <3 ; i++){
                 for(int j = -2; j <3 ; j++){
-                    bufferPixels[((mousePosY+i)*800) + (mousePosX+j)] = SDL_MapRGB(myApp.bufferSurface->format, 200,200,200);
+                    bufferPixels[((mousePosY+i)*800) + (mousePosX+j)] = SDL_MapRGB(myApp.bufferSurface->format, 0,0,0);
                     
                 }
             }

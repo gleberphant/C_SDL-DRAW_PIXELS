@@ -67,10 +67,14 @@ int initApp(APP* appParam){
         SDL_Quit();
     }
 
+    
     appParam->rectScreen.h = appParam->bufferSurface->h;
     appParam->rectScreen.w = appParam->bufferSurface->w;
     appParam->rectScreen.x = 0;
     appParam->rectScreen.y = 0;
+
+    SDL_FillRect(appParam->bufferSurface, &appParam->rectScreen, SDL_MapRGB(appParam->bufferSurface->format, 255, 255, 255));
+
     // tudo ok retorne 0
     return 0;
 
