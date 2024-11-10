@@ -8,7 +8,7 @@ FONTES = main.c
 CFLAGS = -Wall -g -I./SDL2/include/SDL2/
 
 # Bibliotecas
-LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_image
+LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_image -mwindows
 LIBS_PATH = -L./SDL2/lib
 
 # Regra padrão
