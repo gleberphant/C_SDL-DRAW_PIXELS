@@ -7,11 +7,11 @@
 ![C BADGE](https://img.shields.io/badge/c-blue?logo=c)
 
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/gleberphant)
-![GitHub last commit](https://img.shields.io/github/last-commit/gleberphant/RAIN_SDL_C)
-![GitHub branch status](https://img.shields.io/github/checks-status/gleberphant/RAIN_SDL_C/master)
+![GitHub last commit](https://img.shields.io/github/last-commit/gleberphant/DRAW_PIXELS_SDL)
+![GitHub branch status](https://img.shields.io/github/checks-status/gleberphant/DRAW_PIXELS_SDL/master)
 ![LibrePay](https://img.shields.io/liberapay/receives/gleberphant.svg?logo=liberapay)
 
-![GitHub License](https://img.shields.io/github/license/gleberphant/RAIN_SDL_C)
+![GitHub License](https://img.shields.io/github/license/gleberphant/DRAW_PIXELS_SDL)
 
 Desenvolvido por<a href=biolivre.com.br/handersongleber> Handerson Gleber( gr4v4t1nh4) </a>
 
@@ -30,7 +30,7 @@ Gostou do projeto? Por favor considere fazer uma doação para ajudar a melhorá
 ## 🐙 Descrição
 
 "PAINT LIKE"
-Aplicação para desenhar na tela feita em C utilizando a biblioteca  `SDL` em 2024. 
+Aplicação para desenhar na tela feita em C utilizando a biblioteca  `SDL3` em 2024. 
 
 
 
@@ -44,8 +44,8 @@ click com o botão esquerdo do mouse para desenhar
 
 ## 💻 Pré-requisitos
 
-- Biblioteca `SDL2-2.30.9`
-- Biblioteca `SSDL_ttf 3.0` 
+- Biblioteca `SDL3-3.1.6`
+- Biblioteca `SDL_ttf 3.0` 
 - Biblioteca `SDL_image 3.0`  
 
 
@@ -55,7 +55,7 @@ click com o botão esquerdo do mouse para desenhar
 ## 🚀 Clone do repositário
 
 ```
-git clone https://github.com/gleberphant/SDL_PAINT_LIKE.git
+git clone https://github.com/gleberphant/DRAW_PIXELS_SDL.git
 ```
 
 <br>
@@ -63,7 +63,7 @@ git clone https://github.com/gleberphant/SDL_PAINT_LIKE.git
 ##  💾 Compilação do projeto
 
 ```
-gcc -o main main.c -lSDL2 -lSDL2main -lSDL2_image -lSDL2_ttf -I/SDL2/includes -L/SDL2/libs
+gcc -o main main.c -lSDL3 -lSDL3_image -lSDL3_ttf -I/SDL3/includes -L/SDL3/libs
 ```
 
 <br>
@@ -81,7 +81,7 @@ execute o aplicativo 'main.exe'
 
 ## 😄 Autor
 
-HANDERSON GLEBER DE LIMA CAVALCANTI (GRAVATINHA)
+HANDERSON GLEBER DE LIMA CAVALCANTI (GR4V4T1NH4)
 
 E- mail:  handerson.gleber@gmail.com
 

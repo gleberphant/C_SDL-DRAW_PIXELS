@@ -14,10 +14,10 @@ struct APP{
 
 int initApp(APP* appParam){
     
-    printf("\n ..................................");
+    printf("\n ...................................");
     
     // inicialização do SDL
-    printf("\n. SDL_Init ....................");
+    printf("\n. SDL3_Init ....................");
     
     if(!SDL_Init(SDL_INIT_VIDEO)){
         printf("[ %s ] \n\n", SDL_GetError());
@@ -26,7 +26,7 @@ int initApp(APP* appParam){
     printf(" [OK] ");
 
     //criação da janela
-    printf("\n. SDL_CreateWindow ............");
+    printf("\n. SDL3_CreateWindow ............");
     appParam->window = SDL_CreateWindow("DRAW PIXELS", 800, 600, 0);
     
     if( appParam->window == NULL){
@@ -37,7 +37,7 @@ int initApp(APP* appParam){
     printf(" [OK] ");
 
     //criar renderer
-    printf("\n. SDL_CreateRenderer ..........");
+    printf("\n. SDL3_CreateRenderer ..........");
     appParam->renderer = SDL_CreateRenderer(appParam->window, NULL);
 
     if( appParam->renderer == NULL){
@@ -50,7 +50,7 @@ int initApp(APP* appParam){
     printf(" [OK] ");
 
     //criar BUFFER SURFACE
-    printf("\n. SDL_CreateRGBSurface ........");
+    printf("\n. SDL3_CreateRGBSurface ........");
     
     appParam->bufferSurface = SDL_CreateSurface(800,600, SDL_PIXELFORMAT_RGBA32); 
 
@@ -65,14 +65,14 @@ int initApp(APP* appParam){
     printf(" [OK] ");
 
     // definir tamanho da tela
-    printf("\n. SDL_GetClipRect rectScreen ..");
+    printf("\n. SDL3_GetClipRect rectScreen ..");
     
     SDL_GetSurfaceClipRect(appParam->bufferSurface, appParam->rectScreen);
 
     printf(" [OK] ");
 
     // Limpando o buffer
-    printf("\n. SDL_LockSurface  ............");
+    printf("\n. SDL3_LockSurface  ............");
 
     SDL_LockSurface(appParam->bufferSurface);
     
@@ -89,7 +89,7 @@ int initApp(APP* appParam){
     printf(" [OK] ");
     
     // tudo ok retorne 0
-    printf("\n ..................................");
+    printf("\n ...................................");
     printf("\n");
     return 0;
 
