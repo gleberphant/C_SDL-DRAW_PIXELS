@@ -19,7 +19,7 @@ int initApp(APP* appParam){
     // inicialização do SDL
     printf("\n. SDL_Init ....................");
     
-    if(SDL_Init(SDL_INIT_VIDEO) < 0){
+    if(!SDL_Init(SDL_INIT_VIDEO)){
         printf("[ %s ] \n\n", SDL_GetError());
         return 1;
     }
@@ -27,7 +27,7 @@ int initApp(APP* appParam){
 
     //criação da janela
     printf("\n. SDL_CreateWindow ............");
-    appParam->window = SDL_CreateWindow("DRAW PIXELS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+    appParam->window = SDL_CreateWindow("DRAW PIXELS", 800, 600, 0);
     
     if( appParam->window == NULL){
         printf("[ %s ] \n\n", SDL_GetError());
@@ -38,7 +38,7 @@ int initApp(APP* appParam){
 
     //criar renderer
     printf("\n. SDL_CreateRenderer ..........");
-    appParam->renderer = SDL_CreateRenderer(appParam->window, -1, SDL_RENDERER_ACCELERATED);
+    appParam->renderer = SDL_CreateRenderer(appParam->window, NULL);
 
     if( appParam->renderer == NULL){
         printf("[ %s ] \n\n", SDL_GetError());
@@ -51,7 +51,9 @@ int initApp(APP* appParam){
 
     //criar BUFFER SURFACE
     printf("\n. SDL_CreateRGBSurface ........");
-    appParam->bufferSurface = SDL_CreateRGBSurface(0,800,600,32,0,0,0,255);    
+    
+    appParam->bufferSurface = SDL_CreateSurface(800,600, SDL_PIXELFORMAT_RGBA32); 
+
     if(appParam->bufferSurface == NULL){
         printf("[ %s ] \n\n", SDL_GetError());
         SDL_DestroyRenderer(appParam->renderer);
@@ -65,7 +67,7 @@ int initApp(APP* appParam){
     // definir tamanho da tela
     printf("\n. SDL_GetClipRect rectScreen ..");
     
-    SDL_GetClipRect(appParam->bufferSurface, appParam->rectScreen);
+    SDL_GetSurfaceClipRect(appParam->bufferSurface, appParam->rectScreen);
 
     printf(" [OK] ");
 
@@ -76,7 +78,7 @@ int initApp(APP* appParam){
     
     Uint32* bufferPixels = appParam->bufferSurface->pixels;
   
-    Uint32 pixelEmpty = SDL_MapRGB( appParam->bufferSurface->format, 255, 255, 255);
+    Uint32 pixelEmpty = SDL_MapSurfaceRGB( appParam->bufferSurface, 255, 255, 255);
 
     for(int i = 0 ; i < (appParam->bufferSurface->h * appParam->bufferSurface->w)-1; i++){
         
@@ -95,7 +97,7 @@ int initApp(APP* appParam){
 
 
 void closeApp(APP* appParam){
-    SDL_FreeSurface(appParam->bufferSurface);
+    SDL_DestroySurface(appParam->bufferSurface);
     SDL_DestroyTexture(appParam->screenTexture);
     SDL_DestroyRenderer(appParam->renderer);
     SDL_DestroyWindow(appParam->window);

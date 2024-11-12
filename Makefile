@@ -5,10 +5,10 @@ EXECUTAVEL = main
 FONTES = main.c
 
 # Flags do compilador
-CFLAGS = -Wall -g -I./SDL/include/SDL2/
+CFLAGS = -Wall -g -I./SDL/include/
 
 # Bibliotecas
-LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_image
+LIBS = -lmingw32 -lSDL3 -lSDL3_ttf -lSDL3_image
 LIBS_PATH = -L./SDL/lib
 
 # Regra padrão

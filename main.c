@@ -27,26 +27,26 @@ ACTIONS handleEvents(){
     SDL_Event event;
 
     while(SDL_PollEvent(&event) != 0){
-        if(event.type == SDL_QUIT)
+        if(event.type == SDL_EVENT_QUIT)
         {
             return QUIT;
         }
 
-        if (event.type == SDL_KEYUP)
+        if (event.type == SDL_EVENT_KEY_UP)
         {
-            if( event.key.keysym.sym == SDLK_ESCAPE){
+            if( event.key.key == SDLK_ESCAPE){
                 return QUIT;
             }
 
         }
         
 
-        if(event.type == SDL_MOUSEBUTTONDOWN)
+        if(event.type == SDL_EVENT_MOUSE_BUTTON_DOWN)
         {
             return DRAW;
         }
 
-        if(event.type == SDL_MOUSEBUTTONUP)
+        if(event.type == SDL_EVENT_MOUSE_BUTTON_UP)
         {
             return WAIT;
         }
@@ -60,7 +60,7 @@ ACTIONS handleEvents(){
 
 
 BOOLEAN updateStatus(ACTIONS actionParam){
-    int mousePosX, mousePosY;
+    float mousePosX, mousePosY;
 
     if(actionParam != NOTHING){   actionGlobal = actionParam;}
 
@@ -75,10 +75,12 @@ BOOLEAN updateStatus(ACTIONS actionParam){
             SDL_LockSurface(myApp.bufferSurface);
             
             Uint32* bufferPixels = myApp.bufferSurface->pixels;
-            Uint32 pixelColored =  SDL_MapRGB(myApp.bufferSurface->format, 0,0,0);
+            Uint32 pixelColored =  SDL_MapSurfaceRGB(myApp.bufferSurface, 0,0,0);
+
             for(int i = -2; i <3 ; i++){
                 for(int j = -2; j <3 ; j++){
-                    bufferPixels[((mousePosY+i)*800) + (mousePosX+j)] = pixelColored;
+
+                    bufferPixels[(((int)mousePosY+i)*800) + ((int)mousePosX+j)] = pixelColored;
                     
                 }
             }
@@ -100,7 +102,7 @@ BOOLEAN updateStatus(ACTIONS actionParam){
 void drawScreen(){
     
     myApp.screenTexture = SDL_CreateTextureFromSurface(myApp.renderer, myApp.bufferSurface);
-    SDL_RenderCopy(myApp.renderer,myApp.screenTexture, myApp.rectScreen, myApp.rectScreen);
+    SDL_RenderTexture(myApp.renderer,myApp.screenTexture,(SDL_FRect *) myApp.rectScreen, (SDL_FRect *)myApp.rectScreen);
     SDL_RenderPresent(myApp.renderer);
     SDL_DestroyTexture(myApp.screenTexture);
 }
