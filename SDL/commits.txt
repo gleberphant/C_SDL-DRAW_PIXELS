@@ -1,0 +1,7 @@
+SDL         559223ff9dbd7893ad26de5ba4d0847d758bc1e3          
+SDL_image   b1c8ec7d75e3d8398940c9e04a8b82886ae6163d   
+SDL_mixer   5e2a70519294bc6ec44f1870b019ecd4760fde7d   
+SDL_ttf     f20defe45dfe6f0daa0f8e92e8b6221d1be3d9c0     
+SDL_rtf     dec122e6ff2430447a17a4d769e94a2fd96f861a     
+SDL_net     9d76627ca50cddde3259dc06df180427730a1420     
+SDL2_compat 91138cce17641dd5965c0d094a60f46a7aed13e4 

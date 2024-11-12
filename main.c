@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "functions.c"
+#include "appStruct.c"
 
 
 
@@ -75,15 +75,14 @@ BOOLEAN updateStatus(ACTIONS actionParam){
             SDL_LockSurface(myApp.bufferSurface);
             
             Uint32* bufferPixels = myApp.bufferSurface->pixels;
-
+            Uint32 pixelColored =  SDL_MapRGB(myApp.bufferSurface->format, 0,0,0);
             for(int i = -2; i <3 ; i++){
                 for(int j = -2; j <3 ; j++){
-                    bufferPixels[((mousePosY+i)*800) + (mousePosX+j)] = SDL_MapRGB(myApp.bufferSurface->format, 0,0,0);
+                    bufferPixels[((mousePosY+i)*800) + (mousePosX+j)] = pixelColored;
                     
                 }
             }
             
-
             SDL_UnlockSurface(myApp.bufferSurface);
             
             return TRUE;
@@ -101,7 +100,7 @@ BOOLEAN updateStatus(ACTIONS actionParam){
 void drawScreen(){
     
     myApp.screenTexture = SDL_CreateTextureFromSurface(myApp.renderer, myApp.bufferSurface);
-    SDL_RenderCopy(myApp.renderer,myApp.screenTexture, &myApp.rectScreen, &myApp.rectScreen);
+    SDL_RenderCopy(myApp.renderer,myApp.screenTexture, myApp.rectScreen, myApp.rectScreen);
     SDL_RenderPresent(myApp.renderer);
     SDL_DestroyTexture(myApp.screenTexture);
 }
