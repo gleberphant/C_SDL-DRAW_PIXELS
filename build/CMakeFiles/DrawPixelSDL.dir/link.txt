@@ -1,0 +1,1 @@
+gcc -Wl,--enable-auto-import CMakeFiles/DrawPixelSDL.dir/main.c.o -o DrawPixelSDL.exe -Wl,--out-implib,libDrawPixelSDL.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /e/DRAW_PIXEL_SDL_C/lib/libSDL3.dll.a
