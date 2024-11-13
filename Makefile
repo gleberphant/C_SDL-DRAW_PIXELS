@@ -2,7 +2,7 @@
 EXECUTAVEL = main
 
 # Arquivos com fonte
-FONTES = functionsApp.c functionsScene.c main.c
+FONTES = $(wildcard *.c)
 # FONTES = main.c
 
 # Flags do compilador
