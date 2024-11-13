@@ -2,7 +2,8 @@
 EXECUTAVEL = main
 
 # Arquivos com fonte
-FONTES = main.c
+FONTES = functionsApp.c functionsScene.c main.c
+# FONTES = main.c
 
 # Flags do compilador
 CFLAGS = -Wall -g -I./SDL/include/
